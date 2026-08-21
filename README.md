@@ -1,6 +1,6 @@
 # robtiel.de
 
-Hardtekk. Industrial. Raw. — Website von Robtiel.
+Hardtekk. Dark Techno. Gabber. — Website von Robtiel.
 
 Repo: https://github.com/Robtiel-kotworker/robtiel.de
 
