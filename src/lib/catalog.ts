@@ -13,7 +13,7 @@ export const APPS = [
     description:
       "Online Cube Timer für Hardtekk Training. Präzise. Hart. Unkompliziert.",
     href: "https://cube-timer-online.robtiel-kotworker.workers.dev",
-    image: "/brand/cover-cube.jpg",
+    image: "/g/v4/cube-timer.jpg",
     tone: "orange" as const,
   },
   {
@@ -22,7 +22,7 @@ export const APPS = [
     kicker: "Überleben",
     description: "Finde deinen Weg. Überlebe die Strecke. Brettanien wartet.",
     href: "https://tamagotchi.robtiel-kotworker.workers.dev",
-    image: "/brand/cover-brettanien.jpg",
+    image: "/g/v4/brettanien.jpg",
     tone: "lime" as const,
   },
   {
@@ -31,7 +31,7 @@ export const APPS = [
     kicker: "Sammeln & Kämpfen",
     description: "Sammle. Kämpfe. Hardtekkmon. Rote Chupa Chups Edition.",
     href: "https://hardtekkmon---rote-chupa-chups.robtiel-kotworker.workers.dev",
-    image: "/brand/cover-hardtekkmon.jpg",
+    image: "/g/v4/hardtekkmon.jpg",
     tone: "red" as const,
   },
 ] as const;

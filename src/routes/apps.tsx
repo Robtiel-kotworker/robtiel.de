@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { AppCard } from "@/components/app-card";
+import { COVER_PRIMARY } from "@/components/game-cover";
 import { HazardMarks } from "@/components/icons";
 import { APPS } from "@/lib/catalog";
 
@@ -13,13 +14,18 @@ export const Route = createFileRoute("/apps")({
           "Digitale Werkzeuge. Hardtekk Mentalität. Cube Timer, Way to Brettanien, Hardtekkmon.",
       },
     ],
+    links: Object.values(COVER_PRIMARY).map((href) => ({
+      rel: "preload" as const,
+      as: "image",
+      href,
+    })),
   }),
   component: AppsPage,
 });
 
 function AppsPage() {
   return (
-    <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8 md:px-8 md:py-12">
+    <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8 md:px-8 md:py-12" data-covers="v4">
       <p className="mb-3 flex items-center gap-2 font-display text-xs tracking-[0.28em] text-orange uppercase">
         <HazardMarks className="h-3 w-7" />
         Digital

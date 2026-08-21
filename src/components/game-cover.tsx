@@ -1,23 +1,31 @@
-const COVERS = {
-  "cube-timer": "/brand/cover-cube.jpg",
-  brettanien: "/brand/cover-brettanien.jpg",
-  hardtekkmon: "/brand/cover-hardtekkmon.jpg",
+import { useState } from "react";
+
+/** Unique paths Safari has never 404-cached. Badge/hero JPEGs already work as <img>. */
+export const COVER_PRIMARY = {
+  "cube-timer": "/g/v4/cube-timer.jpg",
+  brettanien: "/g/v4/brettanien.jpg",
+  hardtekkmon: "/g/v4/hardtekkmon.jpg",
 } as const;
 
-export function GameCover({
-  slug,
-  title,
-}: {
-  slug: keyof typeof COVERS;
-  title: string;
-}) {
-  const src = COVERS[slug];
+const COVER_FALLBACK = {
+  "cube-timer": "/covers/ok/cube-timer.jpg",
+  brettanien: "/covers/ok/brettanien.jpg",
+  hardtekkmon: "/covers/ok/hardtekkmon.jpg",
+} as const;
+
+export type CoverSlug = keyof typeof COVER_PRIMARY;
+
+export function GameCover({ slug, title }: { slug: CoverSlug; title: string }) {
+  const primary = COVER_PRIMARY[slug];
+  const fallback = COVER_FALLBACK[slug];
+  const [src, setSrc] = useState(primary);
 
   return (
     <div
+      data-cover={slug}
       className="relative aspect-square overflow-hidden rounded-md bg-[#0a0a0c]"
       style={{
-        backgroundImage: `url("${src}")`,
+        backgroundImage: `url("${fallback}")`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
@@ -25,12 +33,19 @@ export function GameCover({
       <img
         src={src}
         alt={title}
-        width={900}
-        height={900}
+        width={800}
+        height={800}
         decoding="async"
-        className="h-full w-full object-cover"
+        loading="eager"
+        draggable={false}
+        className="absolute inset-0 h-full w-full object-cover"
         onError={(event) => {
-          event.currentTarget.style.opacity = "0";
+          const el = event.currentTarget;
+          if (src !== fallback) {
+            setSrc(fallback);
+            return;
+          }
+          el.style.opacity = "0";
         }}
       />
     </div>
