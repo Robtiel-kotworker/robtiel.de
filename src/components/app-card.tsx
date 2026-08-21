@@ -28,8 +28,11 @@ export function AppCard({ app }: { app: (typeof APPS)[number] }) {
       <div className="relative mb-5 overflow-hidden rounded-md bg-bg">
         <img
           src={app.image}
-          alt=""
+          alt={app.title}
           className="aspect-square w-full object-cover"
+          onError={(e) => {
+            e.currentTarget.style.display = "none";
+          }}
         />
       </div>
 
