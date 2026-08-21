@@ -1,6 +1,7 @@
 import { Globe } from "lucide-react";
 import type { APPS, AppTone } from "@/lib/catalog";
 import { cn } from "@/lib/utils";
+import { GameCover } from "./game-cover";
 import { HazardMarks } from "./icons";
 
 const TONE_BTN: Record<AppTone, string> = {
@@ -25,15 +26,8 @@ export function AppCard({ app }: { app: (typeof APPS)[number] }) {
         <HazardMarks className={cn("mt-1 h-3 w-8 shrink-0", TONE_BTN[app.tone])} />
       </div>
 
-      <div className="relative mb-5 overflow-hidden rounded-md bg-bg">
-        <img
-          src={app.image}
-          alt={app.title}
-          className="aspect-square w-full object-cover"
-          onError={(e) => {
-            e.currentTarget.style.display = "none";
-          }}
-        />
+      <div className="mb-5">
+        <GameCover slug={app.slug} title={app.title} />
       </div>
 
       <p className="mb-6 text-base leading-relaxed text-muted">{app.description}</p>

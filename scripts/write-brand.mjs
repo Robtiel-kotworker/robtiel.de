@@ -13,13 +13,14 @@ const files = [
   ["cube.jpg", "public/brand/cube.jpg"],
   ["brettanien.jpg", "public/brand/brettanien.jpg"],
   ["hardtekkmon.jpg", "public/brand/hardtekkmon.jpg"],
+  ["cube.jpg", "public/brand/cover-cube.jpg"],
+  ["brettanien.jpg", "public/brand/cover-brettanien.jpg"],
+  ["hardtekkmon.jpg", "public/brand/cover-hardtekkmon.jpg"],
+  ["cube.jpg", "src/assets/games/cube.jpg"],
+  ["brettanien.jpg", "src/assets/games/brettanien.jpg"],
+  ["hardtekkmon.jpg", "src/assets/games/hardtekkmon.jpg"],
   ["og.jpg", "public/og.jpg"],
 ];
-
-const PLACEHOLDER = Buffer.from(
-  "/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAn/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIQAxAAAAGP/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAgBAQABPxA=",
-  "base64",
-);
 
 function readB64(name) {
   const whole = join(brandDir, `${name}.b64`);
@@ -38,15 +39,15 @@ function readB64(name) {
 for (const [name, destRel] of files) {
   const dest = join(root, destRel);
   mkdirSync(dirname(dest), { recursive: true });
-  if (existsSync(dest) && destRel !== "public/og.jpg") {
-    console.log("keep", destRel);
-    continue;
-  }
   if (existsSync(dest)) {
     console.log("keep", destRel);
     continue;
   }
   const b64 = readB64(name);
-  writeFileSync(dest, b64 ? Buffer.from(b64, "base64") : PLACEHOLDER);
-  console.log(b64 ? "wrote" : "placeholder", destRel);
+  if (!b64) {
+    console.log("missing", destRel);
+    continue;
+  }
+  writeFileSync(dest, Buffer.from(b64, "base64"));
+  console.log("wrote", destRel);
 }
