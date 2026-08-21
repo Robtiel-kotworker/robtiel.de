@@ -16,6 +16,11 @@ const files = [
   ["og.jpg", "public/og.jpg"],
 ];
 
+const PLACEHOLDER = Buffer.from(
+  "/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAn/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIQAxAAAAGP/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAgBAQABPxA=",
+  "base64",
+);
+
 function readB64(name) {
   const whole = join(brandDir, `${name}.b64`);
   if (existsSync(whole)) {
@@ -27,13 +32,21 @@ function readB64(name) {
     if (!existsSync(p)) break;
     parts.push(readFileSync(p, "utf8").replace(/\s+/g, ""));
   }
-  if (!parts.length) throw new Error(`missing brand asset ${name}`);
-  return parts.join("");
+  return parts.length ? parts.join("") : null;
 }
 
 for (const [name, destRel] of files) {
   const dest = join(root, destRel);
   mkdirSync(dirname(dest), { recursive: true });
-  writeFileSync(dest, Buffer.from(readB64(name), "base64"));
-  console.log("wrote", destRel);
+  if (existsSync(dest) && destRel !== "public/og.jpg") {
+    console.log("keep", destRel);
+    continue;
+  }
+  if (existsSync(dest)) {
+    console.log("keep", destRel);
+    continue;
+  }
+  const b64 = readB64(name);
+  writeFileSync(dest, b64 ? Buffer.from(b64, "base64") : PLACEHOLDER);
+  console.log(b64 ? "wrote" : "placeholder", destRel);
 }
