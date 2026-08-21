@@ -4,12 +4,16 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "dev": "vite dev --host 0.0.0.0 --port 8080",
-    "build": "vite build --config vite.cloudflare.config.ts",
-    "build:cf": "vite build --config vite.cloudflare.config.ts",
+    "brand": "node scripts/write-brand.mjs",
+    "dev": "node scripts/write-brand.mjs && vite dev",
+    "build": "node scripts/write-brand.mjs && vite build",
+    "build:cf": "node scripts/write-brand.mjs && vite build",
     "deploy": "npm run build:cf && wrangler deploy",
-    "preview": "vite preview",
+    "preview": "npm run build:cf && wrangler dev",
     "typecheck": "tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=22"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.0",
