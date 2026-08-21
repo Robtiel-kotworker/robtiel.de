@@ -25,7 +25,7 @@ export const Route = createFileRoute("/apps")({
 
 function AppsPage() {
   return (
-    <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8 md:px-8 md:py-12" data-covers="v4">
+    <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8 md:px-8 md:py-12" data-covers="v5">
       <p className="mb-3 flex items-center gap-2 font-display text-xs tracking-[0.28em] text-orange uppercase">
         <HazardMarks className="h-3 w-7" />
         Digital

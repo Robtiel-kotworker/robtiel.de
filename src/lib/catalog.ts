@@ -9,11 +9,11 @@ export const APPS = [
   {
     slug: "cube-timer",
     title: "Cube Timer Online",
-    kicker: "Hardtekk Training",
+    kicker: "Rubiks Cube",
     description:
-      "Online Cube Timer für Hardtekk Training. Präzise. Hart. Unkompliziert.",
+      "Online Cube Timer für Rubiks Cube Training. Präzise. Hart. Unkompliziert.",
     href: "https://cube-timer-online.robtiel-kotworker.workers.dev",
-    image: "/g/v4/cube-timer.jpg",
+    image: "/g/v5/cube-timer.jpg",
     tone: "orange" as const,
   },
   {
@@ -22,7 +22,7 @@ export const APPS = [
     kicker: "Überleben",
     description: "Finde deinen Weg. Überlebe die Strecke. Brettanien wartet.",
     href: "https://tamagotchi.robtiel-kotworker.workers.dev",
-    image: "/g/v4/brettanien.jpg",
+    image: "/g/v5/brettanien.jpg",
     tone: "lime" as const,
   },
   {

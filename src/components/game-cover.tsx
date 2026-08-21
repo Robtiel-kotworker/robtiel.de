@@ -2,14 +2,14 @@ import { useState } from "react";
 
 /** Unique paths Safari has never 404-cached. Badge/hero JPEGs already work as <img>. */
 export const COVER_PRIMARY = {
-  "cube-timer": "/g/v4/cube-timer.jpg",
-  brettanien: "/g/v4/brettanien.jpg",
+  "cube-timer": "/g/v5/cube-timer.jpg",
+  brettanien: "/g/v5/brettanien.jpg",
   hardtekkmon: "/g/v4/hardtekkmon.jpg",
 } as const;
 
 const COVER_FALLBACK = {
-  "cube-timer": "/covers/ok/cube-timer.jpg",
-  brettanien: "/covers/ok/brettanien.jpg",
+  "cube-timer": "/covers/v5/cube-timer.jpg",
+  brettanien: "/covers/v5/brettanien.jpg",
   hardtekkmon: "/covers/ok/hardtekkmon.jpg",
 } as const;
 
