@@ -29,7 +29,7 @@ export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
           <span className="leading-none">
             <span className="block font-display text-xl tracking-[0.18em] uppercase">robtiel</span>
             <span className="mt-1 block text-xs font-medium tracking-[0.18em] text-muted uppercase">
-              Hardtekk. Industrial. Raw.
+              Hardtekk. Industrial. Gabber.
             </span>
           </span>
         </Link>

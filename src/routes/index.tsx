@@ -6,11 +6,11 @@ import { SOCIALS } from "@/lib/catalog";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "robtiel — Hardtekk. Industrial. Raw." },
+      { title: "robtiel — Hardtekk. Industrial. Gabber." },
       {
         name: "description",
         content:
-          "Hardtekk, Industrial, Raw. SoundCloud-Feed und Browser-Apps von robtiel. Est. 2021.",
+          "Hardtekk, Industrial, Gabber. SoundCloud-Feed und Browser-Apps von robtiel. Est. 2021.",
       },
     ],
     links: [{ rel: "preload", as: "image", href: "/brand/hero.jpg" }],

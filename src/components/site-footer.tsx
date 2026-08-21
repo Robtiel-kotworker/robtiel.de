@@ -11,7 +11,7 @@ export function SiteFooter({ cinematic = false }: { cinematic?: boolean }) {
           <span className="h-px flex-1 bg-gradient-to-l from-transparent via-orange/50 to-orange/80" />
         </div>
         <p className="font-display text-sm tracking-[0.38em] text-muted uppercase">
-          Hardtekk. Industrial. Raw.
+          Hardtekk. Industrial. Gabber.
         </p>
         <p className="mt-2 font-display text-xs tracking-[0.32em] text-orange uppercase">
           Est. 2021

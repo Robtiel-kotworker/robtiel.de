@@ -25,7 +25,7 @@ export const Route = createRootRoute({
       {
         name: "description",
         content:
-          "robtiel — Hardtekk. Industrial. Raw. Est. 2021. Tracks, Sets und Browser-Apps.",
+          "robtiel — Hardtekk. Industrial. Gabber. Est. 2021. Tracks, Sets und Browser-Apps.",
       },
       { name: "theme-color", content: "#070708" },
     ],
