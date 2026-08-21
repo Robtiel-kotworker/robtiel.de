@@ -31,7 +31,7 @@ export const APPS = [
     kicker: "Sammeln & Kämpfen",
     description: "Sammle. Kämpfe. Hardtekkmon. Rote Chupa Chups Edition.",
     href: "https://hardtekkmon---rote-chupa-chups.robtiel-kotworker.workers.dev",
-    image: "/g/v4/hardtekkmon.jpg",
+    image: "/g/v5/hardtekkmon.jpg",
     tone: "red" as const,
   },
 ] as const;

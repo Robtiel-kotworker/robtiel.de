@@ -4,13 +4,13 @@ import { useState } from "react";
 export const COVER_PRIMARY = {
   "cube-timer": "/g/v5/cube-timer.jpg",
   brettanien: "/g/v5/brettanien.jpg",
-  hardtekkmon: "/g/v4/hardtekkmon.jpg",
+  hardtekkmon: "/g/v5/hardtekkmon.jpg",
 } as const;
 
 const COVER_FALLBACK = {
   "cube-timer": "/covers/v5/cube-timer.jpg",
   brettanien: "/covers/v5/brettanien.jpg",
-  hardtekkmon: "/covers/ok/hardtekkmon.jpg",
+  hardtekkmon: "/covers/v5/hardtekkmon.jpg",
 } as const;
 
 export type CoverSlug = keyof typeof COVER_PRIMARY;
