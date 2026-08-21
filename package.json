@@ -12,9 +12,6 @@
     "preview": "npm run build:cf && wrangler dev",
     "typecheck": "tsc --noEmit"
   },
-  "engines": {
-    "node": ">=22"
-  },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.0",
     "@tanstack/react-router": "^1.170.0",

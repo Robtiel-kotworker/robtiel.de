@@ -17,8 +17,6 @@ Badge + Wordmark sind schon im Repo. Die großen Fotos (Hero, Bunker, App-Karten
    - `cube.jpg`
    - `brettanien.jpg`
    - `hardtekkmon.jpg`
-   - `rt-badge.jpg` (optional, schon vorhanden)
-   - `wordmark.jpg` (optional, schon vorhanden)
 3. Optional `og.jpg` nach `public/`
 4. Commit auf `main`
 
@@ -28,14 +26,16 @@ Ohne die Fotos läuft die Seite trotzdem — nur dunkler, ohne Bunker/Hero-Bild.
 
 1. [Cloudflare Dashboard](https://dash.cloudflare.com) → **Workers & Pages** → **Create** → **Import a repository**
 2. GitHub **Robtiel-kotworker**, Repo **robtiel.de**, Branch `main`
-3. Build-Einstellungen:
+3. Build-Einstellungen (Node musst du **nicht** eintragen — steht im Repo als `.nvmrc`):
 
    | Feld | Wert |
    |---|---|
    | Build command | `npm run build:cf` |
    | Deploy command | `npx wrangler deploy` |
    | Root directory | `/` |
-   | Node.js | `22` |
+
+   Gibt es kein Feld „Node.js“: einfach leer lassen / überspringen.
+   Optional später: Worker → **Settings** → **Build** → **Build Variables and Secrets** → Variable `NODE_VERSION` = `22`
 
 4. **Save and Deploy**
 
