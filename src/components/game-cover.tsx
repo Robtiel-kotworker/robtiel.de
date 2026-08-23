@@ -2,17 +2,17 @@ import { useState } from "react";
 
 /** Unique paths Safari has never 404-cached. Badge/hero JPEGs already work as <img>. */
 export const COVER_PRIMARY = {
-  "cube-timer": "/g/v5/cube-timer.jpg",
-  brettanien: "/g/v5/brettanien.jpg",
-  hardtekkmon: "/g/v5/hardtekkmon.jpg",
   "koch-eleg-trieb": "/g/v5/koch-eleg-trieb.jpg",
+  hardtekkmon: "/g/v5/hardtekkmon.jpg",
+  brettanien: "/g/v5/brettanien.jpg",
+  "cube-timer": "/g/v5/cube-timer.jpg",
 } as const;
 
 const COVER_FALLBACK = {
-  "cube-timer": "/covers/v5/cube-timer.jpg",
-  brettanien: "/covers/v5/brettanien.jpg",
-  hardtekkmon: "/covers/v5/hardtekkmon.jpg",
   "koch-eleg-trieb": "/covers/v5/koch-eleg-trieb.jpg",
+  hardtekkmon: "/covers/v5/hardtekkmon.jpg",
+  brettanien: "/covers/v5/brettanien.jpg",
+  "cube-timer": "/covers/v5/cube-timer.jpg",
 } as const;
 
 export type CoverSlug = keyof typeof COVER_PRIMARY;

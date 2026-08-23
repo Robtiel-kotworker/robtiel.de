@@ -7,23 +7,13 @@ export const SOCIALS = {
 
 export const APPS = [
   {
-    slug: "cube-timer",
-    title: "Cube Timer Online",
-    kicker: "Rubiks Cube",
-    description:
-      "Online Cube Timer für Rubiks Cube Training. Präzise. Hart. Unkompliziert.",
-    href: "https://cube-timer-online.robtiel-kotworker.workers.dev",
-    image: "/g/v5/cube-timer.jpg",
-    tone: "orange" as const,
-  },
-  {
-    slug: "brettanien",
-    title: "Way to Brettanien",
-    kicker: "Überleben",
-    description: "Finde deinen Weg. Überlebe die Strecke. Brettanien wartet.",
-    href: "https://tamagotchi.robtiel-kotworker.workers.dev",
-    image: "/g/v5/brettanien.jpg",
-    tone: "lime" as const,
+    slug: "koch-eleg-trieb",
+    title: "Koch Eleg-Trieb",
+    kicker: "Maschine",
+    description: "Pattern. Bass. Druck. Koch Eleg-Trieb.",
+    href: "https://koch-eleg-trieb.robtiel-kotworker.workers.dev",
+    image: "/g/v5/koch-eleg-trieb.jpg",
+    tone: "ember" as const,
   },
   {
     slug: "hardtekkmon",
@@ -35,13 +25,23 @@ export const APPS = [
     tone: "red" as const,
   },
   {
-    slug: "koch-eleg-trieb",
-    title: "Koch Eleg-Trieb",
-    kicker: "Maschine",
-    description: "Pattern. Bass. Druck. Koch Eleg-Trieb.",
-    href: "https://koch-eleg-trieb.robtiel-kotworker.workers.dev",
-    image: "/g/v5/koch-eleg-trieb.jpg",
-    tone: "ember" as const,
+    slug: "brettanien",
+    title: "Way to Brettanien",
+    kicker: "Überleben",
+    description: "Finde deinen Weg. Überlebe die Strecke. Brettanien wartet.",
+    href: "https://tamagotchi.robtiel-kotworker.workers.dev",
+    image: "/g/v5/brettanien.jpg",
+    tone: "lime" as const,
+  },
+  {
+    slug: "cube-timer",
+    title: "Cube Timer Online",
+    kicker: "Rubiks Cube",
+    description:
+      "Online Cube Timer für Rubiks Cube Training. Präzise. Hart. Unkompliziert.",
+    href: "https://cube-timer-online.robtiel-kotworker.workers.dev",
+    image: "/g/v5/cube-timer.jpg",
+    tone: "orange" as const,
   },
 ] as const;
 

@@ -11,7 +11,7 @@ export const Route = createFileRoute("/apps")({
       {
         name: "description",
         content:
-          "Digitale Werkzeuge. Hardtekk Mentalität. Cube Timer, Way to Brettanien, Hardtekkmon, Koch Eleg-Trieb.",
+          "Digitale Werkzeuge. Hardtekk Mentalität. Koch Eleg-Trieb, Hardtekkmon, Way to Brettanien, Cube Timer.",
       },
     ],
     links: Object.values(COVER_PRIMARY).map((href) => ({
