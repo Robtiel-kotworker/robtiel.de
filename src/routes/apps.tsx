@@ -11,7 +11,7 @@ export const Route = createFileRoute("/apps")({
       {
         name: "description",
         content:
-          "Digitale Werkzeuge. Hardtekk Mentalität. Cube Timer, Way to Brettanien, Hardtekkmon.",
+          "Digitale Werkzeuge. Hardtekk Mentalität. Cube Timer, Way to Brettanien, Hardtekkmon, Koch Eleg-Trieb.",
       },
     ],
     links: Object.values(COVER_PRIMARY).map((href) => ({
@@ -33,7 +33,7 @@ function AppsPage() {
       <h1 className="font-display text-4xl tracking-[0.08em] uppercase md:text-6xl">Apps / Games</h1>
       <p className="mt-3 max-w-xl text-lg text-muted">Digitale Werkzeuge. Hardtekk Mentalität.</p>
 
-      <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-10 grid gap-6 md:grid-cols-2">
         {APPS.map((app) => (
           <AppCard key={app.slug} app={app} />
         ))}

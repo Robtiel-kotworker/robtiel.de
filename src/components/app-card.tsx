@@ -8,12 +8,14 @@ const TONE_BTN: Record<AppTone, string> = {
   orange: "text-orange",
   lime: "text-lime",
   red: "text-red",
+  ember: "text-ember",
 };
 
 const TONE_PANEL: Record<AppTone, string> = {
   orange: "",
   lime: "metal-panel-lime",
   red: "metal-panel-red",
+  ember: "metal-panel-ember",
 };
 
 export function AppCard({ app }: { app: (typeof APPS)[number] }) {

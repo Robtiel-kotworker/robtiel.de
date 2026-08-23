@@ -16,15 +16,19 @@ const files = [
   ["cube.jpg", "public/brand/cover-cube.jpg"],
   ["brettanien.jpg", "public/brand/cover-brettanien.jpg"],
   ["hardtekkmon.jpg", "public/brand/cover-hardtekkmon.jpg"],
+  ["koch.jpg", "public/brand/cover-koch.jpg"],
   ["cube.jpg", "public/g/v5/cube-timer.jpg"],
   ["brettanien.jpg", "public/g/v5/brettanien.jpg"],
   ["hardtekkmon.jpg", "public/g/v5/hardtekkmon.jpg"],
+  ["koch.jpg", "public/g/v5/koch-eleg-trieb.jpg"],
   ["cube.jpg", "public/covers/v5/cube-timer.jpg"],
   ["brettanien.jpg", "public/covers/v5/brettanien.jpg"],
   ["hardtekkmon.jpg", "public/covers/v5/hardtekkmon.jpg"],
+  ["koch.jpg", "public/covers/v5/koch-eleg-trieb.jpg"],
   ["cube.jpg", "src/assets/games/cube.jpg"],
   ["brettanien.jpg", "src/assets/games/brettanien.jpg"],
   ["hardtekkmon.jpg", "src/assets/games/hardtekkmon.jpg"],
+  ["koch.jpg", "src/assets/games/koch.jpg"],
   ["og.jpg", "public/og.jpg"],
 ];
 
@@ -39,6 +43,7 @@ const required = [
   "public/g/v5/cube-timer.jpg",
   "public/g/v5/brettanien.jpg",
   "public/g/v5/hardtekkmon.jpg",
+  "public/g/v5/koch-eleg-trieb.jpg",
 ];
 
 function readB64(name) {

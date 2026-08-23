@@ -34,6 +34,15 @@ export const APPS = [
     image: "/g/v5/hardtekkmon.jpg",
     tone: "red" as const,
   },
+  {
+    slug: "koch-eleg-trieb",
+    title: "Koch Eleg-Trieb",
+    kicker: "Maschine",
+    description: "Pattern. Bass. Druck. Koch Eleg-Trieb.",
+    href: "https://koch-eleg-trieb.robtiel-kotworker.workers.dev",
+    image: "/g/v5/koch-eleg-trieb.jpg",
+    tone: "ember" as const,
+  },
 ] as const;
 
 export type AppTone = (typeof APPS)[number]["tone"];

@@ -5,12 +5,14 @@ export const COVER_PRIMARY = {
   "cube-timer": "/g/v5/cube-timer.jpg",
   brettanien: "/g/v5/brettanien.jpg",
   hardtekkmon: "/g/v5/hardtekkmon.jpg",
+  "koch-eleg-trieb": "/g/v5/koch-eleg-trieb.jpg",
 } as const;
 
 const COVER_FALLBACK = {
   "cube-timer": "/covers/v5/cube-timer.jpg",
   brettanien: "/covers/v5/brettanien.jpg",
   hardtekkmon: "/covers/v5/hardtekkmon.jpg",
+  "koch-eleg-trieb": "/covers/v5/koch-eleg-trieb.jpg",
 } as const;
 
 export type CoverSlug = keyof typeof COVER_PRIMARY;
