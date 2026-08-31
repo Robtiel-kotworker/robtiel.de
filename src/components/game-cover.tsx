@@ -2,6 +2,7 @@ import { useState } from "react";
 
 /** Unique paths Safari has never 404-cached. Badge/hero JPEGs already work as <img>. */
 export const COVER_PRIMARY = {
+  "countdown-on-your-knees": "/g/v5/countdown-on-your-knees.jpg",
   "koch-eleg-trieb": "/g/v5/koch-eleg-trieb.jpg",
   hardtekkmon: "/g/v5/hardtekkmon.jpg",
   brettanien: "/g/v5/brettanien.jpg",
@@ -9,6 +10,7 @@ export const COVER_PRIMARY = {
 } as const;
 
 const COVER_FALLBACK = {
+  "countdown-on-your-knees": "/covers/v5/countdown-on-your-knees.jpg",
   "koch-eleg-trieb": "/covers/v5/koch-eleg-trieb.jpg",
   hardtekkmon: "/covers/v5/hardtekkmon.jpg",
   brettanien: "/covers/v5/brettanien.jpg",

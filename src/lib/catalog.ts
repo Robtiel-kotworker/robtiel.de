@@ -7,6 +7,16 @@ export const SOCIALS = {
 
 export const APPS = [
   {
+    slug: "countdown-on-your-knees",
+    title: "Countdown On Your Knees",
+    kicker: "Timer",
+    description:
+      "Der Timer kniet nicht. Du schon.\nZwei Greifer. Ein Handheld. Null Diskussion. Kein Download. Kein Tutorial. Kein Happy End.\nNur Browser. Nur Druck. Nur Hardtekk.",
+    href: "https://countdown-on-your-knees.robtiel-kotworker.workers.dev",
+    image: "/g/v5/countdown-on-your-knees.jpg",
+    tone: "steel" as const,
+  },
+  {
     slug: "koch-eleg-trieb",
     title: "Koch Eleg-Trieb",
     kicker: "Maschine",

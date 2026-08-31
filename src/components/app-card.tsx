@@ -9,6 +9,7 @@ const TONE_BTN: Record<AppTone, string> = {
   lime: "text-lime",
   red: "text-red",
   ember: "text-ember",
+  steel: "text-steel-hi",
 };
 
 const TONE_PANEL: Record<AppTone, string> = {
@@ -16,6 +17,7 @@ const TONE_PANEL: Record<AppTone, string> = {
   lime: "metal-panel-lime",
   red: "metal-panel-red",
   ember: "metal-panel-ember",
+  steel: "metal-panel-steel",
 };
 
 export function AppCard({ app }: { app: (typeof APPS)[number] }) {
@@ -32,7 +34,7 @@ export function AppCard({ app }: { app: (typeof APPS)[number] }) {
         <GameCover slug={app.slug} title={app.title} />
       </div>
 
-      <p className="mb-6 text-base leading-relaxed text-muted">{app.description}</p>
+      <p className="mb-6 whitespace-pre-line text-base leading-relaxed text-muted">{app.description}</p>
 
       <a
         href={app.href}
