@@ -55,6 +55,7 @@ export const APPS = [
   },
 ] as const;
 
+export type AppSlug = (typeof APPS)[number]["slug"];
 export type AppTone = (typeof APPS)[number]["tone"];
 
 export type Track = {

@@ -47,6 +47,10 @@ function LegalRow() {
       <Link to="/datenschutz" className="hover:text-fg">
         Datenschutz
       </Link>
+      <span aria-hidden="true">|</span>
+      <Link to="/traffic" className="hover:text-fg">
+        Traffic
+      </Link>
     </p>
   );
 }

@@ -42,12 +42,20 @@ function DatenschutzPage() {
 
         <h2>3. Aufruf der Website</h2>
         <p>
-          Beim bloßen Besuch dieser Seiten erheben wir keine Nutzungsprofile und setzen
-          keine Tracking-Cookies. Es findet keine Reichweitenmessung und kein Marketing-Tracking
-          statt.
+          Beim bloßen Besuch dieser Seiten setzen wir keine Tracking-Cookies und erstellen keine
+          Nutzungsprofile für Werbung.
         </p>
 
-        <h2>4. SoundCloud</h2>
+        <h2>4. App-Klicks (verschiedene IP-Adressen)</h2>
+        <p>
+          Wenn Sie unter „Apps / Games“ eine App öffnen, zählen wir, von wie vielen verschiedenen
+          IP-Adressen dieser Klick kommt. Dieselbe Adresse wird pro App nur einmal gezählt.
+          Gespeichert wird nicht die IP-Adresse selbst, sondern ein nicht umkehrbarer Hash.
+          Zweck ist die Reichweitenmessung der einzelnen Tools. Rechtsgrundlage ist Art. 6 Abs. 1
+          lit. f DSGVO (berechtigtes Interesse an der Auswertung der Nutzung).
+        </p>
+
+        <h2>5. SoundCloud</h2>
         <p>
           Im Bereich „Feed“ können Tracks über den Player von SoundCloud (SoundCloud Limited /
           SoundCloud Inc., USA) abgespielt werden. Beim Start eines Tracks baut Ihr Browser
@@ -65,21 +73,21 @@ function DatenschutzPage() {
           </a>
         </p>
 
-        <h2>5. Apps auf Cloudflare</h2>
+        <h2>6. Apps auf Cloudflare</h2>
         <p>
           Die Spiele und Tools unter „Apps / Games“ werden auf eigener Infrastruktur bei
           Cloudflare, Inc. bereitgestellt und in einem neuen Tab geöffnet. Für die dortige
           Datenverarbeitung gelten die Hinweise der jeweiligen App bzw. von Cloudflare.
         </p>
 
-        <h2>6. Externe Links</h2>
+        <h2>7. Externe Links</h2>
         <p>
           Links zu Twitch und YouTube führen auf Angebote Dritter. Erst beim Anklicken
           verlassen Sie diese Website; es gelten die Datenschutzhinweise der jeweiligen
           Anbieter.
         </p>
 
-        <h2>7. Kontaktaufnahme</h2>
+        <h2>8. Kontaktaufnahme</h2>
         <p>
           Wenn Sie uns per E-Mail kontaktieren, verarbeiten wir die von Ihnen mitgeteilten
           Daten zur Bearbeitung der Anfrage (Art. 6 Abs. 1 lit. b bzw. f DSGVO). Die Daten
@@ -87,7 +95,7 @@ function DatenschutzPage() {
           gesetzlichen Aufbewahrungspflichten entgegenstehen.
         </p>
 
-        <h2>8. Ihre Rechte</h2>
+        <h2>9. Ihre Rechte</h2>
         <p>Sie haben gegenüber dem Verantwortlichen folgende Rechte:</p>
         <ul>
           <li>Auskunft (Art. 15 DSGVO)</li>
@@ -103,7 +111,7 @@ function DatenschutzPage() {
           Informationsfreiheit Rheinland-Pfalz.
         </p>
 
-        <h2>9. SSL/TLS</h2>
+        <h2>10. SSL/TLS</h2>
         <p>
           Diese Seite nutzt eine verschlüsselte Verbindung, um die Übertragung vertraulicher
           Inhalte zu schützen.

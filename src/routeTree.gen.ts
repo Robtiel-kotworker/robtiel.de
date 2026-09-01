@@ -14,6 +14,7 @@ import { Route as AppsRouteImport } from './routes/apps'
 import { Route as DatenschutzRouteImport } from './routes/datenschutz'
 import { Route as FeedRouteImport } from './routes/feed'
 import { Route as ImpressumRouteImport } from './routes/impressum'
+import { Route as TrafficRouteImport } from './routes/traffic'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -40,6 +41,11 @@ const ImpressumRoute = ImpressumRouteImport.update({
   path: '/impressum',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TrafficRoute = TrafficRouteImport.update({
+  id: '/traffic',
+  path: '/traffic',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -47,6 +53,7 @@ export interface FileRoutesByFullPath {
   '/datenschutz': typeof DatenschutzRoute
   '/feed': typeof FeedRoute
   '/impressum': typeof ImpressumRoute
+  '/traffic': typeof TrafficRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -54,6 +61,7 @@ export interface FileRoutesByTo {
   '/datenschutz': typeof DatenschutzRoute
   '/feed': typeof FeedRoute
   '/impressum': typeof ImpressumRoute
+  '/traffic': typeof TrafficRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -62,13 +70,22 @@ export interface FileRoutesById {
   '/datenschutz': typeof DatenschutzRoute
   '/feed': typeof FeedRoute
   '/impressum': typeof ImpressumRoute
+  '/traffic': typeof TrafficRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/apps' | '/datenschutz' | '/feed' | '/impressum'
+  fullPaths:
+    '/' | '/apps' | '/datenschutz' | '/feed' | '/impressum' | '/traffic'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/apps' | '/datenschutz' | '/feed' | '/impressum'
-  id: '__root__' | '/' | '/apps' | '/datenschutz' | '/feed' | '/impressum'
+  to: '/' | '/apps' | '/datenschutz' | '/feed' | '/impressum' | '/traffic'
+  id:
+    | '__root__'
+    | '/'
+    | '/apps'
+    | '/datenschutz'
+    | '/feed'
+    | '/impressum'
+    | '/traffic'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -77,6 +94,7 @@ export interface RootRouteChildren {
   DatenschutzRoute: typeof DatenschutzRoute
   FeedRoute: typeof FeedRoute
   ImpressumRoute: typeof ImpressumRoute
+  TrafficRoute: typeof TrafficRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -116,6 +134,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ImpressumRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/traffic': {
+      id: '/traffic'
+      path: '/traffic'
+      fullPath: '/traffic'
+      preLoaderRoute: typeof TrafficRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -125,6 +150,7 @@ const rootRouteChildren: RootRouteChildren = {
   DatenschutzRoute: DatenschutzRoute,
   FeedRoute: FeedRoute,
   ImpressumRoute: ImpressumRoute,
+  TrafficRoute: TrafficRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
