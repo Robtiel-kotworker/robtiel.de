@@ -1,6 +1,6 @@
 import { Globe } from "lucide-react";
 import type { APPS, AppTone } from "@/lib/catalog";
-import { recordAppHit } from "@/lib/hits";
+import { recordAppHit, visitorDeviceId } from "@/lib/hits";
 import { cn } from "@/lib/utils";
 import { GameCover } from "./game-cover";
 import { HazardMarks } from "./icons";
@@ -21,13 +21,7 @@ const TONE_PANEL: Record<AppTone, string> = {
   steel: "metal-panel-steel",
 };
 
-export function AppCard({
-  app,
-  uniqueIps = 0,
-}: {
-  app: (typeof APPS)[number];
-  uniqueIps?: number;
-}) {
+export function AppCard({ app }: { app: (typeof APPS)[number] }) {
   return (
     <article className={cn("metal-panel flex flex-col p-5 md:p-6", TONE_PANEL[app.tone])}>
       <div className="mb-4 flex items-start justify-between gap-3">
@@ -41,18 +35,14 @@ export function AppCard({
         <GameCover slug={app.slug} title={app.title} />
       </div>
 
-      <p className="mb-4 whitespace-pre-line text-base leading-relaxed text-muted">{app.description}</p>
-
-      <p className="mb-6 font-display text-xs tracking-[0.18em] text-muted uppercase">
-        {uniqueIps} {uniqueIps === 1 ? "verschiedene IP" : "verschiedene IPs"}
-      </p>
+      <p className="mb-6 whitespace-pre-line text-base leading-relaxed text-muted">{app.description}</p>
 
       <a
         href={app.href}
         target="_blank"
         rel="noopener noreferrer"
         onClick={() => {
-          void recordAppHit({ data: { slug: app.slug } });
+          void recordAppHit({ data: { slug: app.slug, deviceId: visitorDeviceId() } });
         }}
         className={cn(
           "mt-auto inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-bg/70 px-4 font-display text-sm tracking-[0.18em] uppercase",

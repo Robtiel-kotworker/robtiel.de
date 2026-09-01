@@ -46,13 +46,15 @@ function DatenschutzPage() {
           Nutzungsprofile für Werbung.
         </p>
 
-        <h2>4. App-Klicks (verschiedene IP-Adressen)</h2>
+        <h2>4. App-Klicks (verschiedene IP-Adressen und Geräte)</h2>
         <p>
           Wenn Sie unter „Apps / Games“ eine App öffnen, zählen wir, von wie vielen verschiedenen
-          IP-Adressen dieser Klick kommt. Dieselbe Adresse wird pro App nur einmal gezählt.
-          Gespeichert wird nicht die IP-Adresse selbst, sondern ein nicht umkehrbarer Hash.
-          Zweck ist die Reichweitenmessung der einzelnen Tools. Rechtsgrundlage ist Art. 6 Abs. 1
-          lit. f DSGVO (berechtigtes Interesse an der Auswertung der Nutzung).
+          IP-Adressen und Geräten dieser Klick kommt. Dieselbe Adresse und dasselbe Gerät werden
+          pro App nur einmal gezählt. Die IP-Adresse selbst wird nicht gespeichert, sondern nur
+          ein nicht umkehrbarer Hash. Für das Gerät wird eine zufällige Kennung in Ihrem Browser
+          (localStorage) gesetzt und ebenfalls nur als Hash gespeichert. Zweck ist die
+          Reichweitenmessung der einzelnen Tools. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO
+          (berechtigtes Interesse an der Auswertung der Nutzung).
         </p>
 
         <h2>5. SoundCloud</h2>
