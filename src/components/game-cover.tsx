@@ -19,7 +19,15 @@ const COVER_FALLBACK = {
 
 export type CoverSlug = keyof typeof COVER_PRIMARY;
 
-export function GameCover({ slug, title }: { slug: CoverSlug; title: string }) {
+export function GameCover({
+  slug,
+  title,
+  fsk18 = false,
+}: {
+  slug: CoverSlug;
+  title: string;
+  fsk18?: boolean;
+}) {
   const primary = COVER_PRIMARY[slug];
   const fallback = COVER_FALLBACK[slug];
   const [src, setSrc] = useState(primary);
@@ -52,6 +60,22 @@ export function GameCover({ slug, title }: { slug: CoverSlug; title: string }) {
           el.style.opacity = "0";
         }}
       />
+      {fsk18 ? <Fsk18Marker /> : null}
+    </div>
+  );
+}
+
+function Fsk18Marker() {
+  return (
+    <div
+      className="pointer-events-none absolute right-3 top-3 z-10 grid size-[3.25rem] place-items-center rounded-full bg-red text-white shadow-[0_0_0_2px_#fff,0_6px_18px_rgb(0_0_0/0.45)] md:right-4 md:top-4 md:size-16"
+      aria-label="Freigegeben ab 18 Jahren"
+      title="FSK 18"
+    >
+      <span className="flex flex-col items-center leading-none">
+        <span className="font-display text-[0.5rem] tracking-[0.22em] md:text-[0.6rem]">FSK</span>
+        <span className="font-display text-[1.55rem] tracking-tight md:text-[1.85rem]">18</span>
+      </span>
     </div>
   );
 }

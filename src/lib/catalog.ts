@@ -33,6 +33,7 @@ export const APPS = [
     href: "https://hardtekkmon---rote-chupa-chups.robtiel-kotworker.workers.dev",
     image: "/g/v5/hardtekkmon.jpg",
     tone: "red" as const,
+    fsk18: true as const,
   },
   {
     slug: "brettanien",

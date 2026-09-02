@@ -32,7 +32,7 @@ export function AppCard({ app }: { app: (typeof APPS)[number] }) {
       </div>
 
       <div className="mb-5">
-        <GameCover slug={app.slug} title={app.title} />
+        <GameCover slug={app.slug} title={app.title} fsk18={"fsk18" in app && app.fsk18 === true} />
       </div>
 
       <p className="mb-6 whitespace-pre-line text-base leading-relaxed text-muted">{app.description}</p>
