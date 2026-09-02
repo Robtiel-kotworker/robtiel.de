@@ -1,7 +1,9 @@
+import { useState, type MouseEvent } from "react";
 import { Globe } from "lucide-react";
 import type { APPS, AppTone } from "@/lib/catalog";
 import { recordAppHit, visitorDeviceId } from "@/lib/hits";
 import { cn } from "@/lib/utils";
+import { FskGate } from "./fsk-gate";
 import { GameCover } from "./game-cover";
 import { HazardMarks } from "./icons";
 
@@ -22,6 +24,22 @@ const TONE_PANEL: Record<AppTone, string> = {
 };
 
 export function AppCard({ app }: { app: (typeof APPS)[number] }) {
+  const [gateOpen, setGateOpen] = useState(false);
+  const needsGate = "fsk18" in app && app.fsk18 === true;
+
+  function track() {
+    void recordAppHit({ data: { slug: app.slug, deviceId: visitorDeviceId() } });
+  }
+
+  function onPlay(event: MouseEvent<HTMLAnchorElement>) {
+    if (!needsGate) {
+      track();
+      return;
+    }
+    event.preventDefault();
+    setGateOpen(true);
+  }
+
   return (
     <article className={cn("metal-panel flex flex-col p-5 md:p-6", TONE_PANEL[app.tone])}>
       <div className="mb-4 flex items-start justify-between gap-3">
@@ -32,7 +50,7 @@ export function AppCard({ app }: { app: (typeof APPS)[number] }) {
       </div>
 
       <div className="mb-5">
-        <GameCover slug={app.slug} title={app.title} fsk18={"fsk18" in app && app.fsk18 === true} />
+        <GameCover slug={app.slug} title={app.title} fsk18={needsGate} />
       </div>
 
       <p className="mb-6 whitespace-pre-line text-base leading-relaxed text-muted">{app.description}</p>
@@ -41,9 +59,7 @@ export function AppCard({ app }: { app: (typeof APPS)[number] }) {
         href={app.href}
         target="_blank"
         rel="noopener noreferrer"
-        onClick={() => {
-          void recordAppHit({ data: { slug: app.slug, deviceId: visitorDeviceId() } });
-        }}
+        onClick={onPlay}
         className={cn(
           "mt-auto inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-bg/70 px-4 font-display text-sm tracking-[0.18em] uppercase",
           "shadow-[0_0_0_1px_rgb(255_255_255/0.08)] transition-shadow hover:shadow-[0_0_0_1px_currentColor]",
@@ -53,6 +69,10 @@ export function AppCard({ app }: { app: (typeof APPS)[number] }) {
         <Globe className="size-4" />
         Im Browser spielen
       </a>
+
+      {gateOpen ? (
+        <FskGate gameHref={app.href} onConfirm={track} onClose={() => setGateOpen(false)} />
+      ) : null}
     </article>
   );
 }
